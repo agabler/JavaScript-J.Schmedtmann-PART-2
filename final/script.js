@@ -587,3 +587,47 @@ console.log(calcAverage([2, 3, 7]));
 console.log(calcAverage(totals));
 console.log(calcAverage(tips));
 */
+
+/*******************************************************FUNCTIONS- Part 2, video 33 **************************
+
+function describeCountry(country, population, capitalCity){
+return `${country} has ${population} people and its capital city is ${capitalCity}`;
+
+}
+
+const finlandDescription = describeCountry('Finland', 6000000, 'Helsinki');
+console.log(finlandDescription);
+
+const polandDescription = describeCountry('Poland', 7000000, 'Warsaw');
+console.log(polandDescription);
+
+const germanyDescription = describeCountry('Germany', 10000000, 'Berlin');
+console.log(germanyDescription);
+
+**************************************************************************************************************/
+
+
+/*******************************************************FUNCTION DECLARATIONS and EXPRESSIONS- Part 2, video 34 **/
+/*FUNCTION DECLARATIONS***************************************/
+function percentageOfWorld(population){
+return (population / 7900) * 100;
+}
+
+const spainPopulationPercentage = percentageOfWorld(134095000);
+console.log(spainPopulationPercentage);           //1697405.0632
+
+const polandPopulationPercentage = percentageOfWorld(6000000);
+console.log(polandPopulationPercentage);          //75949.36708
+
+/*FUNCTION EXPRESSIONS****************************************/
+const percentageOfWolrd2 = function(population){
+return (population / 7900) * 100;
+}
+
+const spainPopulationPercentage2 = percentageOfWorld(134095000);
+console.log(spainPopulationPercentage);           //1697405.0632
+
+const polandPopulationPercentage2 = percentageOfWorld(6000000);
+console.log(polandPopulationPercentage);          //75949.36708
+
+/********************************************************************************************************************/
