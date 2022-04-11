@@ -588,7 +588,7 @@ console.log(calcAverage(totals));
 console.log(calcAverage(tips));
 */
 
-/*******************************************************FUNCTIONS- Part 2, video 33 **************************
+/*******************************************************FUNCTIONS- Part 2, video 33 **************************/
 
 function describeCountry(country, population, capitalCity){
 return `${country} has ${population} people and its capital city is ${capitalCity}`;
@@ -604,7 +604,7 @@ console.log(polandDescription);
 const germanyDescription = describeCountry('Germany', 10000000, 'Berlin');
 console.log(germanyDescription);
 
-**************************************************************************************************************/
+/**************************************************************************************************************/
 
 
 /*******************************************************FUNCTION DECLARATIONS and EXPRESSIONS- Part 2, video 34 **/
@@ -630,4 +630,67 @@ console.log(spainPopulationPercentage);           //1697405.0632
 const polandPopulationPercentage2 = percentageOfWorld(6000000);
 console.log(polandPopulationPercentage);          //75949.36708
 
+/*******ARROW FUNCTIONS**************************************/
+
+const percentageOfWorld3 = population => (population / 7900) * 100;
+const spainPopulationPercentage3 = percentageOfWorld3(134095000);
+console.log(spainPopulationPercentage3);         //1697405.0632
+
+
+/**********FUNCTION CALLING ANOTHER FUNCTION**************/
+
+function percentageOfWorld(population){     //this is the first function which we call below
+  return(population / 7900) * 3;
+}
+
+function describePopulation(country, population){
+  const percentage = percentageOfWorld(population);             //we call the above function here
+  return `${country} has ${population} million people which is about ${percentage} % of the world`
+}
+
+const spainDescribe = describePopulation('Spain', 10000000);     //we call the main function, which contains additional function inside
+console.log(spainDescribe);                     //Spain has 10000000 million people which is about 3797.46835443038 % of the world.
+
+
 /********************************************************************************************************************/
+
+
+
+
+/****************************PART 2, CHALLENGE #1   ***************************************************************/
+
+/*****FUNCTION DECLARATIONS************* *
+function calcAverage(score1, score2, score3){
+  return (score1 + score2 + score3) / 3;
+}
+******************************************/
+/*****ARROW FUNCTION************************************/
+
+ const calcAverage = (score1, score2, score3) => {
+      return (score1 + score2 + score3) / 3;
+ }
+
+
+
+const averageDolphins = calcAverage(44, 23, 71);
+console.log(averageDolphins);                      //46
+
+const averageKoalas = calcAverage(65, 54, 49);
+console.log(averageKoalas);                         //56
+
+
+
+const checkWinner = function (avgDolphins, avgKoalas){
+      if(avgDolphins >= 2 * avgKoalas){
+        console.log(`Dolphins win ${avgDolphins} vs. ${avgKoalas})`);
+      } else if (avgKoalas >= 2 * avgDolphins){
+        console.log(`Koalas win ${avgKoalas} vs. ${avgDolphins})`);
+      } else {
+        console.log(`No one wins`);
+      }
+
+}
+
+
+
+checkWinner(averageDolphins, averageKoalas);
